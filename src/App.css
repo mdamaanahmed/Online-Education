@@ -1,38 +1,254 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Karla:wght@300&family=Nunito:wght@300;400;500;600;700;800&display=swap');
+/* Global Css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Nunito', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html{
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.light_theme {
+  --main: orange;
+  --second: #47B5FF;
+  --white: white;
+  --dark: #000;
+  --gray: rgb(151, 151, 151);
+  --middle-gray: rgb(218, 218, 218);
+  --light-gray: rgba(243, 243, 243, 0.603);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* utility classes */
+.outline_button1 {
+  position: relative;
+  border: 1px solid var(--main) !important;
+  background-color: var(--white);
+  color: var(--main);
+  border-radius: 10px;
+  padding: 5px 15px;
+  overflow: hidden;
+  z-index: 1;
+  transition: .3s ease-in-out;
+}
+.outline_button1::before{
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  background-color: var(--main);
+  border-radius: 50%;
+  width: 113px;
+  height: 113px;
+  z-index: -1;
+  transition: .3s ease-in-out;
+}
+.outline_button1:hover{
+  color: var(--white) !important;
+}
+.outline_button1:hover::before{
+  top: -32%;
+  left: -32%;
+}
+
+.orange_button {
+  color: var(--main);
+  border: 2px solid var(--main);
+  border-radius: 10px;
+  padding: 8px 16px;
+  text-decoration: none;
+  overflow: hidden;
+  background-color: transparent;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 1;
+  transition: .3s ease-in-out;
+}
+.orange_button:hover{
+  background-color: var(--main);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.skyblue_button {
+  background-color: var(--second);
+  color: white;
+  border: 2px solid var(--second);
+  border-radius: 10px;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: 600;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  transition: .3s ease-in-out;
+}
+.skyblue_button:hover{
+  background-color: transparent;
+  color: var(--second);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Navbar Start */
+nav {
+  background-color: var(--white);
+  /* border-bottom: 1px solid var(--middle-gray); */
+  padding: 0;
+  height: 64px;
+  box-shadow: 0 0 10px var(--middle-gray);
+}
+nav .container > a{
+  font-family: 'Courgette', cursive;
+  color: var(--main) !important;
+  cursor: pointer;
+  font-size: 24px;
+}
+nav .container .collapse ul li{
+  position: relative;
+  margin: 0px 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .5s ease-in-out;
+}
+nav .container .collapse ul li::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main);
+  height: 3px;
+  border-radius: 15px 15px 0 0;
+  transition: .2s ease-in-out;
+  width: 0%;
+}
+nav .container .collapse ul li:hover::after{
+  width: 100%;
+}
+nav .container .collapse ul li a{
+  color: var(--gray) !important;
+  padding: 20px 0px;
+  transition: .2s ease-in-out;
+}
+nav .container .collapse ul li:hover a{
+  color: var(--main) !important;
+}
+nav .container .signin a{
+  color: var(--second);
+  text-decoration: none;
+  margin-right: 20px;  
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+nav .container .signin a:hover{
+  color: var(--gray);
+}
+/* Navbar End */
+
+/* Home Section Start */
+#home .container-fluid{
+  width: 100%;
+  height: 90vh;
+  background: url('assets/images/home_bg1.jpg');
+  background-repeat: no-repeat;
+  background-position: 0% 60%;
+  background-size: cover;
+}
+#home .container-fluid .container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#home .container h1{
+  color: var(--main);
+  font-size: 4rem;
+  font-weight: 700;
+}
+#home .container p{
+  letter-spacing: 1px;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+#home .container a {
+  margin-right: 40px;
+}
+/* Home Section End */
+
+/* Courses Section Start */
+.courses .box{
+  position: relative;
+  background-color: var(--light-gray);
+  border-radius: 25px;
+  padding: 10px;
+  margin: 30px 10px ;
+  box-sizing: padding-box;
+  z-index: 1;
+  box-shadow: 0 0 15px 1px var(--middle-gray);
+}
+.courses .box::before{
+  content: '';
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  background-color: var(--light-purple);
+  width: 30%;
+  height: 30%;
+  border-radius: 25px;
+  z-index: -1;
+  transition: .3s ease-in-out;
+  box-sizing: border-box;
+}
+.courses .box:hover::before{
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 10px  var(--middle-gray);
+}
+.courses .box .img{
+  width: 100%;
+  height: 270px;
+}
+.courses .col-lg-3 .box .img img{
+  width: 100%;
+  border-radius: 15px;
+}
+.courses .box .content {
+  padding: 10px 10px;
+}
+.courses .box .content p{
+  margin: 0;
+  font-size: .80rem;
+  color: var(--gray);
+}
+.courses .box .content h2{
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--dark);
+}
+.courses .box .content h1{
+  font-weight: 600;
+  color: var(--main);
+  margin: 8px 0px;
+}
+.courses .box .content .price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.courses .box .content .price h5{
+  color: var(--gray);
+  font-size: .80rem;
+  margin: 0;
+}
+.courses .box .content .price p{
+  color: var(--main);
+  background-color: var(--light-purple);
+  padding: 4px 8px;
+  border-radius: 20px;
+  vertical-align: middle;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
 }
