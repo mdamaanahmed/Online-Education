@@ -20,6 +20,7 @@ import teacher from './assets/images/teacher.jpg'
 import tution from './assets/images/tution.jpg'
 import alltime from './assets/images/alltime.jpg'
 import qltvideo from './assets/images/qltvideo.jpg'
+import mission from './assets/images/mission_bg.jpg'
 import JoinCard from './components/JoinCard';
 import { RiLoginBoxFill } from 'react-icons/ri';
 import { AiOutlineUsergroupAdd } from 'react-icons/ai';
@@ -158,6 +159,39 @@ const App = () => {
         </div>
       </section>
       {/* Services Section End */}
+
+      {/* Mission Section Start */}
+      <section id="mission">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-lg-12 heading">
+              <h1>Our Mission Is</h1>
+              <p>by our online institute we want to express more and more education</p>
+            </div>
+            <div className="col-lg-6">
+              <div className="content">
+                <h3>Improvement In Education System</h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt ipsum ab necessitatibus iste, quae atque omnis, nobis ipsam minima nihil dicta. Nostrum ipsum minima eaque inventore voluptatibus omnis vero labore distinctio est perferendis voluptate nobis laudantium, praesentium expedita unde voluptas pariatur placeat, quasi cupiditate esse earum illum, asperiores accusamus! Numquam quaerat nobis dignissimos, itaque harum quia perferendis temporibus maiores culpa quo repudiandae sed, deserunt nisi eaque. Est culpa nam atque qui natus nihil amet.</p>
+                <div class="points">
+                  <p><span></span> Lorem ipsum dolor amet, consectetur adipiscing elit.</p>
+                  <p><span></span> Lorem ipsum dolor amet, consectetur adipiscing elit.</p>
+                  <p><span></span> Lorem ipsum dolor amet, consectetur adipiscing elit.</p>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6 p-0">
+              <div className="img">
+              <img src={mission} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Mission Section End */}
+
+
+
+
 
 
     </>
