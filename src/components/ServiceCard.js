@@ -4,7 +4,7 @@ import { BiDotsVerticalRounded } from 'react-icons/bi';
 const ServiceCard = ({ img, enrollment, heading, p }) => {
     return (
         <>
-            <div className="col-lg-3">
+            <div className="col-lg-3 col-md-6">
                 <div className="box">
                     <div className='image_bg'>
                     </div>
